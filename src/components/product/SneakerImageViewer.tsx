@@ -43,7 +43,7 @@ export default function SneakerImageViewer({
         className="relative brutal-border-4 brutal-shadow-lg overflow-hidden"
         style={{
           backgroundColor: accentColor,
-          height: "380px",
+          height: "350px",
         }}
       >
         {imgError || !activeImage ? (
@@ -71,7 +71,7 @@ export default function SneakerImageViewer({
                 justifyContent: "center",
               }}
             >
-              <div className="relative w-full h-[380px]">
+              <div className="relative w-full h-[350px]">
                 <Image
                   src={activeImage}
                   alt={`${name} - view ${activeIndex + 1}`}
@@ -97,7 +97,7 @@ export default function SneakerImageViewer({
       </div>
 
       {/* Thumbnail gallery */}
-      <div className="grid grid-cols-5 gap-2">
+      <div className="grid grid-cols-5 gap-5">
         {images.map((img, i) => (
           <motion.button
             key={i}
@@ -112,8 +112,8 @@ export default function SneakerImageViewer({
               backgroundColor: i === activeIndex ? accentColor : "#fef6e4",
               boxShadow:
                 i === activeIndex
-                  ? "4px 4px 0 0 #0a0a0a"
-                  : "3px 3px 0 0 #0a0a0a",
+                  ? "2px 2px 0 0 #0a0a0a"
+                  : "2px 2px 0 0 #0a0a0a",
               opacity: i === activeIndex ? 1 : 0.7,
             }}
           >

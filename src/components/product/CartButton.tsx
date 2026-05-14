@@ -24,7 +24,10 @@ export default function CartButton({ productName, disabled }: CartButtonProps) {
   const [added, setAdded] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (disabled) return;
+    if (disabled) {
+      alert("Please select a size first!");
+      return;
+    }
 
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -80,7 +83,7 @@ export default function CartButton({ productName, disabled }: CartButtonProps) {
               }
             : {}
         }
-        className="w-full brutal-border-4 brutal-shadow-lg font-display text-lg uppercase py-5 px-8 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+        className="w-full brutal-border-4 brutal-shadow-lg font-display text-base uppercase py-3 px-6 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
         style={{
           backgroundColor: added ? "#a3ff00" : "#fff200",
           color: "#0a0a0a",

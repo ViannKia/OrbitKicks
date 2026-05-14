@@ -52,6 +52,74 @@ export const products: SneakerType[] = [
       "The Air Jordan 1 Low brings the iconic AJ1 silhouette closer to the ground. Clean colorways, premium leather, and the classic Wings logo make this a wardrobe essential.",
     sizes: [7, 8, 9, 10, 11, 12],
   },
+  {
+    id: "4",
+    name: "Air Jordan 3 Retro White and Orange Peel",
+    slug: "air-jordan-3-retro-white-and-orange-peel",
+    price: 200,
+    imageUrl: "/images/air-jordan-3-retro-white-and-orange-peel/AJ3-Retro-White and Orange Peel (1).png",
+    images: [
+      "/images/air-jordan-3-retro-white-and-orange-peel/AJ3-Retro-White and Orange Peel (1).png",
+      "/images/air-jordan-3-retro-white-and-orange-peel/AJ3-Retro-White and Orange Peel (2).png",
+      "/images/air-jordan-3-retro-white-and-orange-peel/AJ3-Retro-White and Orange Peel (3).png",
+      "/images/air-jordan-3-retro-white-and-orange-peel/AJ3-Retro-White and Orange Peel (4).png",
+      "/images/air-jordan-3-retro-white-and-orange-peel/AJ3-Retro-White and Orange Peel (5).png",
+    ],
+    description:
+      "The Air Jordan 3 Retro returns with a striking white and orange peel colorway. This classic silhouette features the iconic elephant print and Jumpman logo.",
+    sizes: [7, 8, 9, 10, 11, 12],
+  },
+  {
+    id: "5",
+    name: "Nike Air Max Laser90",
+    slug: "air-max-laser90",
+    price: 160,
+    imageUrl: "/images/air-max-laser90/AM-Laser90 (1).png",
+    images: [
+      "/images/air-max-laser90/AM-Laser90 (1).png",
+      "/images/air-max-laser90/AM-Laser90 (2).png",
+      "/images/air-max-laser90/AM-Laser90 (3).png",
+      "/images/air-max-laser90/AM-Laser90 (4).png",
+      "/images/air-max-laser90/AM-Laser90 (5).png",
+    ],
+    description:
+      "The Nike Air Max Laser90 combines retro Air Max DNA with modern laser-cut details. Lightweight cushioning and bold colorways make this a standout choice.",
+    sizes: [7, 8, 9, 10, 11, 12],
+  },
+  {
+    id: "6",
+    name: "Nike Alphafly 3",
+    slug: "alphafly-3",
+    price: 250,
+    imageUrl: "/images/alphafly-3/A3 (1).png",
+    images: [
+      "/images/alphafly-3/A3 (1).png",
+      "/images/alphafly-3/A3 (2).png",
+      "/images/alphafly-3/A3 (3).png",
+      "/images/alphafly-3/A3 (4).png",
+      "/images/alphafly-3/A3 (5).png",
+    ],
+    description:
+      "The Nike Alphafly 3 is engineered for speed with advanced cushioning technology. Built for runners who demand peak performance and cutting-edge design.",
+    sizes: [7, 8, 9, 10, 11, 12],
+  },
+  {
+    id: "7",
+    name: "Nike P6000",
+    slug: "p6000",
+    price: 140,
+    imageUrl: "/images/p6000/P6000 (1).png",
+    images: [
+      "/images/p6000/P6000 (1).png",
+      "/images/p6000/P6000 (2).png",
+      "/images/p6000/P6000 (3).png",
+      "/images/p6000/P6000 (4).png",
+      "/images/p6000/P6000 (5).png",
+    ],
+    description:
+      "The Nike P6000 brings retro running aesthetics with modern comfort. Premium materials and classic Nike styling make this a timeless choice.",
+    sizes: [7, 8, 9, 10, 11, 12],
+  },
 ];
 
 export function getProductBySlug(slug: string): SneakerType | undefined {

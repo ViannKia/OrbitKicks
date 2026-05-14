@@ -77,13 +77,13 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
       </div>
 
       {/* Card body */}
-      <div className="p-5 space-y-3">
-        <h3 className="font-display text-lg uppercase leading-tight line-clamp-2">
+      <div className="p-3 space-y-2">
+        <h3 className="font-display text-base uppercase leading-tight line-clamp-2">
           {product.name}
         </h3>
 
         <div className="flex items-baseline justify-between gap-3">
-          <p className="font-display text-2xl">{formatPrice(product.price)}</p>
+          <p className="font-display text-xl">{formatPrice(product.price)}</p>
           <span className="text-xs uppercase tracking-widest text-black/60 font-bold">
             In stock
           </span>

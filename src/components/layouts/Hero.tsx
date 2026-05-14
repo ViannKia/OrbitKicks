@@ -116,7 +116,7 @@ export default function Hero() {
           className="absolute bottom-[15%] left-[-2%] sm:left-[2%] brutal-border-4 brutal-shadow px-4 py-2 -rotate-12"
           style={{ backgroundColor: "#a3ff00" }}
         >
-          <span className="font-display text-sm sm:text-base uppercase">NEW DROP ⚡</span>
+          <span className="font-display text-xs xs:text-base uppercase">NEW DROP ⚡</span>
         </motion.div>
 
         {/* Small diamond */}
@@ -168,10 +168,10 @@ export default function Hero() {
       {/* Main content with parallax */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="relative z-10 max-w-7xl mx-auto px-6 py-2 sm:py-4 grid lg:grid-cols-12 gap-6 items-center"
+        className="relative z-10 max-w-7xl mx-auto px-6 py-1 sm:py-2 grid lg:grid-cols-12 gap-4 items-center"
       >
         {/* Left column: text */}
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 lg:pl-12">
           {/* Tag line */}
           <motion.div
             custom={0.2}
@@ -191,7 +191,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Massive headline with character animation */}
-          <div className="font-display uppercase leading-[0.85] mb-6">
+          <div className="font-display uppercase leading-[0.85] mb-4">
             <div className="overflow-hidden">
               <AnimatedText
                 text="STEP"
@@ -237,10 +237,9 @@ export default function Hero() {
             variants={slideUpVariants}
             initial="hidden"
             animate="visible"
-            className="text-base sm:text-lg text-black/70 max-w-xl font-medium leading-relaxed mb-6"
+            className="text-sm sm:text-base text-black/70 max-w-xl font-medium leading-relaxed mb-4"
           >
-            Tilt. Zoom. Rotate. Experience every stitch, lace, and sole like
-            you&apos;re holding it in your hands.
+            Discover premium sneakers from the world's most coveted brands. Authentic kicks and exclusive drops delivered to your door.
           </motion.p>
 
           {/* CTAs */}
@@ -249,7 +248,7 @@ export default function Hero() {
             variants={slideUpVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap gap-4 mb-8"
+            className="flex flex-wrap gap-3 mb-6"
           >
             <Link href="/shop">
               <motion.div
@@ -266,7 +265,7 @@ export default function Hero() {
                   rotate: 1,
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                className="brutal-border-4 font-display text-base sm:text-lg uppercase px-8 py-4 inline-flex items-center gap-3"
+                className="brutal-border-4 font-display text-sm sm:text-base uppercase px-6 py-3 inline-flex items-center gap-3"
                 style={{
                   backgroundColor: "#0a0a0a",
                   color: "#fff200",
@@ -297,7 +296,7 @@ export default function Hero() {
                   boxShadow: "0px 0px 0 0 #0a0a0a",
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                className="brutal-border-4 font-display text-base sm:text-lg uppercase px-8 py-4 inline-flex items-center gap-2"
+                className="brutal-border-4 font-display text-sm sm:text-base uppercase px-6 py-3 inline-flex items-center gap-2"
                 style={{
                   backgroundColor: "#fef6e4",
                   color: "#0a0a0a",
@@ -315,7 +314,7 @@ export default function Hero() {
             variants={slideUpVariants}
             initial="hidden"
             animate="visible"
-            className="flex flex-wrap gap-6"
+            className="flex flex-wrap gap-6 max-w-md"
           >
             {[
               { value: "500+", label: "Sneakers", bg: "#00d9ff" },
@@ -326,13 +325,13 @@ export default function Hero() {
                 key={stat.label}
                 whileHover={{ y: -4, rotate: -2 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="brutal-border-4 px-4 py-3"
+                className="brutal-border-4 px-2 py-1 flex-1"
                 style={{ backgroundColor: stat.bg, boxShadow: "4px 4px 0 0 #0a0a0a" }}
               >
-                <div className="font-display text-2xl sm:text-3xl">
+                <div className="font-display text-base sm:text-lg">
                   {stat.value}
                 </div>
-                <div className="text-[10px] uppercase tracking-widest font-bold">
+                <div className="text-[9px] uppercase tracking-widest font-bold">
                   {stat.label}
                 </div>
               </motion.div>
@@ -345,33 +344,37 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.7, rotate: 12 }}
           animate={{ opacity: 1, scale: 1, rotate: 3 }}
           transition={{ type: "spring", stiffness: 80, damping: 14, delay: 0.6 }}
-          className="lg:col-span-5 relative hidden lg:block"
+          className="lg:col-span-5 relative hidden lg:block lg:-translate-x-16 lg:max-w-md"
         >
           <motion.div
             whileHover={{ rotate: 0, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="brutal-border-4 p-2 aspect-[4/5]"
+            className="brutal-border-4 p-2 aspect-square"
             style={{ backgroundColor: "#ff5c8d", boxShadow: "12px 12px 0 0 #0a0a0a" }}
           >
             <div
               className="w-full h-full brutal-border-4 grid-pattern flex items-center justify-center relative overflow-hidden"
               style={{ backgroundColor: "#fef6e4" }}
             >
-              {/* Big sneaker emoji with bounce */}
+              {/* Nike Air Force 1 Low Proto image */}
               <motion.div
                 animate={{
-                  y: [0, -25, 0],
-                  rotate: [-8, 8, -8],
-                  scale: [1, 1.05, 1],
+                  y: [0, -15, 0],
+                  rotate: [-3, 3, -3],
+                  scale: [1, 1.02, 1],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut" as const,
                 }}
-                className="text-[140px] sm:text-[160px]"
+                className="relative w-4/5 h-4/5"
               >
-                👟
+                <img
+                  src="/images/air-force-1-proto/AF1Low-Proto (1).png"
+                  alt="Nike Air Force 1 Low Proto"
+                  className="w-full h-full object-contain"
+                />
               </motion.div>
 
               {/* Corner stickers */}
@@ -389,7 +392,7 @@ export default function Hero() {
                 className="absolute bottom-4 right-4 brutal-border font-display text-sm uppercase px-3 py-1"
                 style={{ backgroundColor: "#00d9ff" }}
               >
-                $180
+                $150
               </motion.div>
               <motion.div
                 animate={{ rotate: [0, -3, 3, 0] }}

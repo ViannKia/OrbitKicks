@@ -113,9 +113,9 @@ export default function ProductDetailClient({
         </div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-10">
+      <div className="max-w-7xl mx-auto px-6 pt-10" suppressHydrationWarning>
         {/* Main layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 lg:items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12 lg:items-start">
           {/* Image viewer — dramatic entrance from left */}
           <motion.div
             initial="hidden"
@@ -135,7 +135,7 @@ export default function ProductDetailClient({
             initial="hidden"
             animate="visible"
             variants={sidebarContainerVariants}
-            className="lg:col-span-5 flex flex-col gap-4 lg:self-stretch"
+            className="lg:col-span-5 flex flex-col gap-3 lg:self-stretch"
           >
             <div className="flex flex-col gap-4">
             {/* Tag */}
@@ -201,16 +201,6 @@ export default function ProductDetailClient({
                 productName={product.name}
                 disabled={selectedSize === null}
               />
-              {selectedSize === null && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1 }}
-                  className="text-xs uppercase tracking-widest text-center mt-3 font-bold opacity-60"
-                >
-                  ☝ Pick a size first
-                </motion.p>
-              )}
             </motion.div>
 
             {/* Quick stats grid */}

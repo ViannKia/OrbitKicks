@@ -48,7 +48,7 @@ export default function AboutPage() {
         </div>
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 py-8 space-y-16">
         {/* Mission */}
         <motion.section
           initial="hidden"
