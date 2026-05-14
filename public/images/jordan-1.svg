@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <g transform="translate(400,320)" stroke="#0a0a0a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Sole shadow -->
+    <ellipse cx="20" cy="100" rx="220" ry="14" fill="#0a0a0a" opacity="0.15" stroke="none"/>
+    <!-- Outsole -->
+    <path d="M-200,90 Q-200,110 -180,115 L180,115 Q210,115 215,95 L215,75 L-200,75 Z" fill="#fef6e4"/>
+    <!-- Midsole stripe -->
+    <path d="M-200,75 L215,75" stroke="#0a0a0a" stroke-width="6"/>
+    <!-- Upper main body -->
+    <path d="M-180,75 Q-180,40 -150,10 Q-100,-30 -30,-50 Q40,-65 110,-55 Q170,-45 200,-10 Q215,20 215,50 L215,75 Z" fill="#ffffff"/>
+    <!-- Toe overlay -->
+    <path d="M-180,75 Q-180,40 -150,10 Q-100,-30 -30,-50 Q-50,-30 -70,-10 Q-90,20 -100,75 Z" fill="#ff5c8d"/>
+    <!-- Heel overlay -->
+    <path d="M120,-40 Q170,-30 200,-10 Q215,20 215,50 L215,75 L120,75 Z" fill="#ff5c8d"/>
+    <!-- Swoosh -->
+    <path d="M-100,40 Q-50,-20 50,-30 Q100,-30 130,10" fill="none" stroke="#0a0a0a" stroke-width="14"/>
+    <path d="M-100,40 Q-50,-20 50,-30 Q100,-30 130,10" fill="none" stroke="#fff200" stroke-width="6"/>
+    <!-- Tongue -->
+    <path d="M-30,-50 Q-20,-70 10,-72 Q40,-70 50,-50 Q55,-20 50,10 L-30,10 Z" fill="#fff200"/>
+    <!-- Laces -->
+    <line x1="-15" y1="-40" x2="35" y2="-40"/>
+    <line x1="-15" y1="-25" x2="35" y2="-25"/>
+    <line x1="-15" y1="-10" x2="35" y2="-10"/>
+    <line x1="-15" y1="5" x2="35" y2="5"/>
+    <!-- Eyelets -->
+    <circle cx="-15" cy="-40" r="3" fill="#0a0a0a" stroke="none"/>
+    <circle cx="35" cy="-40" r="3" fill="#0a0a0a" stroke="none"/>
+    <circle cx="-15" cy="-25" r="3" fill="#0a0a0a" stroke="none"/>
+    <circle cx="35" cy="-25" r="3" fill="#0a0a0a" stroke="none"/>
+    <circle cx="-15" cy="-10" r="3" fill="#0a0a0a" stroke="none"/>
+    <circle cx="35" cy="-10" r="3" fill="#0a0a0a" stroke="none"/>
+    <!-- Ankle collar -->
+    <path d="M150,-40 Q160,-50 175,-45 Q185,-30 180,-10" fill="none"/>
+  </g>
+</svg>
