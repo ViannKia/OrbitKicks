@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "ORBIT KICKS — Sneakers That Hit Different",
   description:
     "Premium sneakers with ridiculous energy. Step into the future, brutally.",
+  icons: {
+    icon: "/orbit.svg",
+  },
 };
 
 export default function RootLayout({
