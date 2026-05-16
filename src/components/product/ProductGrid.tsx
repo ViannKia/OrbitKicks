@@ -56,15 +56,11 @@ export default function ProductGrid({ products }: ProductGridProps) {
       className="relative py-16 sm:py-20 border-y-4 border-black overflow-hidden"
       style={{ backgroundColor: "#fef6e4" }}
     >
-      {/* Background decorative elements */}
-      <motion.div
-        animate={isInView ? { rotate: 360 } : {}}
-        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      {/* Background decorative elements (static for performance) */}
+      <div
         className="absolute -top-20 -right-20 w-64 h-64 rounded-full border-4 border-dashed border-black/10 pointer-events-none"
       />
-      <motion.div
-        animate={isInView ? { rotate: -360 } : {}}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      <div
         className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border-4 border-dashed border-black/10 pointer-events-none"
       />
 

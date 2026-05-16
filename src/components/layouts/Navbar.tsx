@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 
+import { useCartStore } from "@/store/cartStore";
+
 const navItemVariants: Variants = {
   hidden: { opacity: 0, y: -20 },
   visible: (i: number) => ({
@@ -53,7 +55,14 @@ const cartVariants: Variants = {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const totalItems = useCartStore((state) => state.getTotalItems());
+  const toggleCart = useCartStore((state) => state.toggleCart);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
@@ -175,7 +184,8 @@ export default function Navbar() {
                   boxShadow: "0px 0px 0 0 #0a0a0a",
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                className="brutal-border-4 font-display text-sm uppercase tracking-wide px-5 py-3 flex items-center gap-2"
+                onClick={toggleCart}
+                className="brutal-border-4 font-display text-sm uppercase tracking-wide px-5 py-3 flex items-center gap-2 relative"
                 style={{
                   backgroundColor: "#ff5c8d",
                   color: "#0a0a0a",
@@ -197,7 +207,17 @@ export default function Navbar() {
                     d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272"
                   />
                 </svg>
-                <span className="hidden sm:inline">CART (0)</span>
+                <span className="hidden sm:inline">CART ({mounted ? totalItems : 0})</span>
+                {mounted && totalItems > 0 && (
+                  <motion.span
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    key={totalItems}
+                    className="sm:hidden absolute -top-2 -right-2 brutal-border bg-black text-[#fff200] text-xs font-display rounded-full w-6 h-6 flex items-center justify-center"
+                  >
+                    {totalItems}
+                  </motion.span>
+                )}
               </motion.button>
             </motion.div>
 

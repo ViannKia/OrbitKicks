@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import { useCartStore } from "@/store/cartStore";
+
 interface Particle {
   id: number;
   x: number;
@@ -13,21 +15,46 @@ interface Particle {
 }
 
 interface CartButtonProps {
+  productId: string;
   productName: string;
+  productSlug: string;
+  productPrice: number;
+  productImageUrl: string;
+  selectedSize: number | null;
   disabled?: boolean;
 }
 
 const PARTICLE_EMOJIS = ["⚡", "★", "💥", "🔥", "✦", "♦"];
 
-export default function CartButton({ productName, disabled }: CartButtonProps) {
+export default function CartButton({
+  productId,
+  productName,
+  productSlug,
+  productPrice,
+  productImageUrl,
+  selectedSize,
+  disabled,
+}: CartButtonProps) {
   const [particles, setParticles] = useState<Particle[]>([]);
   const [added, setAdded] = useState(false);
+  const addItem = useCartStore((state) => state.addItem);
+  const openCart = useCartStore((state) => state.openCart);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (disabled) {
+    if (disabled || selectedSize === null) {
       alert("Please select a size first!");
       return;
     }
+
+    // Add item to cart
+    addItem({
+      productId,
+      name: productName,
+      slug: productSlug,
+      price: productPrice,
+      imageUrl: productImageUrl,
+      size: selectedSize,
+    });
 
     const rect = e.currentTarget.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -57,9 +84,10 @@ export default function CartButton({ productName, disabled }: CartButtonProps) {
       );
     }, 900);
 
-    setTimeout(() => setAdded(false), 1800);
-
-    console.log(`Added "${productName}" to cart`);
+    setTimeout(() => {
+      setAdded(false);
+      openCart();
+    }, 1000);
   };
 
   return (

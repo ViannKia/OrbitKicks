@@ -71,11 +71,10 @@ export default function WhySection() {
       className="relative py-16 sm:py-20 border-b-4 border-black overflow-hidden"
       style={{ backgroundColor: "#0a0a0a", color: "#fef6e4" }}
     >
-      {/* Decorative rotating ring */}
-      <motion.div
-        animate={isInView ? { rotate: 360 } : {}}
-        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+      {/* Decorative ring (no infinite animation for performance) */}
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border-2 border-dashed border-white/5 pointer-events-none"
+        style={{ willChange: "auto" }}
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -153,18 +152,9 @@ export default function WhySection() {
                   boxShadow: "8px 8px 0 0 #fef6e4",
                 }}
               >
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{
-                    duration: 3 + i * 0.5,
-                    repeat: Infinity,
-                    ease: "easeInOut" as const,
-                    delay: i * 0.5,
-                  }}
-                  className="text-5xl mb-4"
-                >
+                <div className="text-5xl mb-4">
                   {feature.icon}
-                </motion.div>
+                </div>
                 <h3 className="font-display text-xl uppercase mb-2 leading-tight">
                   {feature.title}
                 </h3>

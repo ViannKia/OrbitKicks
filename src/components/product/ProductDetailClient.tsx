@@ -198,7 +198,12 @@ export default function ProductDetailClient({
             {/* Cart button */}
             <motion.div variants={sidebarItemVariants}>
               <CartButton
+                productId={product.id}
                 productName={product.name}
+                productSlug={product.slug}
+                productPrice={product.price}
+                productImageUrl={product.imageUrl}
+                selectedSize={selectedSize}
                 disabled={selectedSize === null}
               />
             </motion.div>

@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
+import CartDrawer from "@/components/product/CartDrawer";
 
 const archivoBlack = Archivo_Black({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 pt-20">{children}</main>
         <Footer />
+        <CartDrawer />
       </body>
     </html>
   );

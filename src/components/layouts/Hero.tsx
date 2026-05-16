@@ -77,9 +77,7 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Parallax effects
-  const bgY = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  // Reduced parallax for smoother performance
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -87,8 +85,8 @@ export default function Hero() {
       ref={sectionRef}
       className="relative min-h-[calc(100vh-5rem)] max-h-screen grid-pattern overflow-hidden flex flex-col justify-start pt-0"
     >
-      {/* Animated background shapes with parallax */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
+      {/* Animated background shapes (no parallax for performance) */}
+      <div className="absolute inset-0 pointer-events-none">
         {/* Big circle */}
         <motion.div
           custom={0.8}
@@ -142,7 +140,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Floating dots */}
-        {[...Array(5)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
             animate={{
@@ -163,11 +161,11 @@ export default function Hero() {
             }}
           />
         ))}
-      </motion.div>
+      </div>
 
       {/* Main content with parallax */}
       <motion.div
-        style={{ y: textY, opacity }}
+        style={{ opacity }}
         className="relative z-10 max-w-7xl mx-auto px-6 py-1 sm:py-2 grid lg:grid-cols-12 gap-4 items-center"
       >
         {/* Left column: text */}
