@@ -3,12 +3,14 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { useCartStore } from "@/store/cartStore";
 import { formatPrice } from "@/lib/utils";
 
 export default function CartDrawer() {
+  const router = useRouter();
   const { items, isOpen, closeCart, removeItem, updateQuantity, getTotalPrice } =
     useCartStore();
 
@@ -214,7 +216,10 @@ export default function CartDrawer() {
                 <motion.button
                   whileHover={{ x: -4, y: -4, boxShadow: "10px 10px 0 0 #0a0a0a" }}
                   whileTap={{ x: 4, y: 4, boxShadow: "0px 0px 0 0 #0a0a0a" }}
-                  onClick={() => alert("Checkout coming soon!")}
+                  onClick={() => {
+                    closeCart();
+                    router.push("/checkout");
+                  }}
                   className="w-full brutal-border-4 font-display text-base uppercase py-3 flex items-center justify-center gap-2"
                   style={{
                     backgroundColor: "#0a0a0a",
